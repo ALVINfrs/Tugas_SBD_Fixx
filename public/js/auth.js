@@ -191,6 +191,11 @@ function loadOrderHistory() {
             <p class="order-status ${order.status}">${order.status}</p>
           </div>
           <div class="order-summary">
+           <div class="order-image">
+        <!-- Gambar dummy untuk pesanan -->
+<img src="/img/Caffeine.png" alt="Kopi Arabika" />
+
+      </div>
             <p>${
               order.item_count
             } item(s) - Total: Rp. ${order.total.toLocaleString()}</p>
@@ -271,6 +276,11 @@ function viewOrderReceipt(orderId) {
           : order.payment_method === "gopay"
           ? "GoPay"
           : order.payment_method;
+      document
+        .getElementById("print-receipt")
+        .addEventListener("click", function () {
+          window.print();
+        });
 
       document.getElementById("receipt-modal").classList.add("active");
     })
