@@ -162,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initAuth();
 });
 
-// Add this function to auth.js
 function loadOrderHistory() {
   fetch("/api/orders/user/orders")
     .then((response) => response.json())
